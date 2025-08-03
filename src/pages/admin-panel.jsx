@@ -36,47 +36,13 @@ class AdminPanel {
         }
     }
 
-    async setupAuthentication() {
-        const loginScreen = document.getElementById('loginScreen');
+        // Autenticação removida - acesso direto ao painel
         const adminPanel = document.getElementById('adminPanel');
-        const loginForm = document.getElementById('loginForm');
-        const passwordInput = document.getElementById('passwordInput');
-        const errorMessage = document.getElementById('errorMessage');
-
-        // Verificar se já está logado
-        if (localStorage.getItem('admin_logged_in') === 'true') {
-            loginScreen.style.display = 'none';
+        if (adminPanel) {
             adminPanel.style.display = 'block';
-            return;
         }
-
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const password = passwordInput.value;
-            
-            // Senhas aceitas
-            const validPasswords = ['admin123', 'k7admin', 'logix2024'];
-            
-            if (validPasswords.includes(password)) {
-                localStorage.setItem('admin_logged_in', 'true');
-                loginScreen.style.display = 'none';
-                adminPanel.style.display = 'block';
-                errorMessage.style.display = 'none';
-            } else {
-                errorMessage.textContent = 'Senha incorreta. Tente novamente.';
-                errorMessage.style.display = 'block';
-                passwordInput.value = '';
-            }
-        });
-
-        // Logout
-        const logoutButton = document.getElementById('logoutButton');
-        if (logoutButton) {
-            logoutButton.addEventListener('click', () => {
-                localStorage.removeItem('admin_logged_in');
-                location.reload();
-            });
-        }
+        
+        console.log('✅ Acesso direto ao painel administrativo habilitado');
     }
 
     async setupEventListeners() {
