@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel K7 - Logix Express</title>
+    <title>Painel Administrativo - Logix Express</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -15,346 +15,205 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #345C7A, #2c4a63);
-            min-height: 100vh;
+            background: #f8f9fa;
             color: #333;
         }
 
-        /* Login Screen */
-        .login-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .login-logo {
-            width: 60px;
-            height: 60px;
-            background: #345C7A;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .login-logo i {
-            font-size: 24px;
-            color: white;
-        }
-
-        .login-form {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .login-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #345C7A;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #555;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #345C7A;
-        }
-
-        .login-button {
-            background: #345C7A;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .login-button:hover {
-            background: #2c4a63;
-            transform: translateY(-1px);
-        }
-
-        .error-message {
-            color: #e74c3c;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        /* Admin Panel */
-        .admin-panel {
-            display: none;
-            background: #f8f9fa;
-            min-height: 100vh;
-        }
-
         .admin-header {
-            background: white;
-            padding: 20px;
+            background: linear-gradient(135deg, #345C7A, #2c4a63);
+            color: white;
+            padding: 20px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .admin-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .admin-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: #345C7A;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
         .admin-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #345C7A;
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logout-button {
-            background: #e74c3c;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .logout-button:hover {
-            background: #c0392b;
-        }
-
-        .admin-content {
-            padding: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .navigation-section {
+        .admin-nav {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .nav-buttons {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
-        
+
         .nav-button {
-            background: #e1e5e9;
-            color: #345C7A;
-            border: none;
-            padding: 12px 20px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            color: #495057;
+            padding: 10px 20px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        
+
         .nav-button:hover {
-            background: #345C7A;
-            color: white;
-            transform: translateY(-1px);
+            background: #e9ecef;
+            border-color: #345C7A;
         }
-        
+
         .nav-button.active {
             background: #345C7A;
             color: white;
+            border-color: #345C7A;
         }
-        
+
+        .admin-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
         .admin-view {
             display: none;
         }
-        
-        .form-section {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+        .admin-view.active {
+            display: block;
         }
-        
-        .form-grid {
+
+        .view-header {
+            margin-bottom: 30px;
+        }
+
+        .view-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .view-description {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
-        
-        .form-group {
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #345C7A;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #345C7A;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .bulk-import-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .bulk-import-instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #345C7A;
+        }
+
+        .bulk-import-instructions h4 {
+            color: #345C7A;
+            margin-bottom: 15px;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             gap: 8px;
         }
-        
-        .form-group label {
-            font-weight: 600;
-            color: #345C7A;
-            font-size: 0.9rem;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 10px;
+
+        .bulk-textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
             border: 2px solid #e1e5e9;
-            border-radius: 6px;
-            font-size: 0.9rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.4;
+            resize: vertical;
             transition: border-color 0.3s ease;
         }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+
+        .bulk-textarea:focus {
             outline: none;
             border-color: #345C7A;
+            box-shadow: 0 0 0 3px rgba(52, 92, 122, 0.1);
         }
-        
-        .bulk-textarea {
-            min-height: 200px;
-            font-family: monospace;
-            font-size: 0.8rem;
-            line-height: 1.4;
-        }
-        
-        .submit-button {
-            background: #345C7A;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
+
+        .bulk-controls {
+            margin: 20px 0;
             display: flex;
+            gap: 15px;
             align-items: center;
-            gap: 8px;
-            justify-content: center;
-        }
-        
-        .submit-button:hover {
-            background: #2c4a63;
-            transform: translateY(-1px);
-        }
-        .controls-section {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .section-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #345C7A;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .control-group label {
-            font-weight: 500;
-            color: #555;
-            font-size: 0.9rem;
-        }
-
-        .control-input {
-            padding: 10px;
-            border: 2px solid #e1e5e9;
-            border-radius: 6px;
-            font-size: 0.9rem;
-        }
-
-        .control-input:focus {
-            outline: none;
-            border-color: #345C7A;
+            flex-wrap: wrap;
         }
 
         .control-button {
             background: #345C7A;
             color: white;
             border: none;
-            padding: 10px 16px;
-            border-radius: 6px;
+            padding: 12px 20px;
+            border-radius: 8px;
             cursor: pointer;
+            font-weight: 600;
             font-size: 0.9rem;
-            font-weight: 500;
             transition: all 0.3s ease;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            justify-content: center;
         }
 
         .control-button:hover {
             background: #2c4a63;
             transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(52, 92, 122, 0.3);
         }
 
         .control-button.danger {
@@ -373,11 +232,65 @@
             background: #229954;
         }
 
-        .leads-table-container {
+        .control-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .preview-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #345C7A;
+        }
+
+        .preview-section h4 {
+            color: #345C7A;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .preview-controls {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .preview-summary {
+            color: #666;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .results-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f5e8;
+            border-radius: 8px;
+            border: 2px solid #27ae60;
+        }
+
+        .results-section h4 {
+            color: #27ae60;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .leads-table {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .table-header {
@@ -390,165 +303,22 @@
         }
 
         .table-title {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .leads-count {
             background: rgba(255, 255, 255, 0.2);
-            padding: 4px 12px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
         }
 
-        .leads-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .leads-table th,
-        .leads-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #e1e5e9;
-            font-size: 0.8rem;
-        }
-
-        .leads-table th {
-            background: #f8f9fa;
-            font-weight: 600;
-            color: #345C7A;
-            font-size: 0.8rem;
-        }
-
-
-        .lead-actions {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .action-button {
-            padding: 6px 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .action-button.edit {
-            background: #3498db;
-            color: white;
-        }
-
-        .action-button.next {
-            background: #27ae60;
-            color: white;
-        }
-
-        .action-button.prev {
-            background: #f39c12;
-            color: white;
-        }
-
-        .action-button.delete {
-            background: #e74c3c;
-            color: white;
-        }
-
-        .action-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .stage-badge {
-            background: #345C7A;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .stage-badge.completed {
-            background: #27ae60;
-        }
-
-        .stage-badge.pending {
-            background: #f39c12;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .modal-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #345C7A;
-        }
-
-        .close-button {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #999;
-        }
-
-        .close-button:hover {
-            color: #333;
-        }
-
-        .status-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .status-indicator.auto {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .status-indicator.manual {
-            background: #fff3cd;
-            color: #856404;
+        .table-content {
+            padding: 20px;
         }
 
         .empty-state {
@@ -558,783 +328,947 @@
         }
 
         .empty-state i {
-            font-size: 3rem;
-            color: #ccc;
+            font-size: 4rem;
+            color: #ddd;
             margin-bottom: 20px;
         }
 
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        .empty-state h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #999;
         }
-        
-        @keyframes slideOutRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
+
+        .empty-state p {
+            font-size: 1rem;
+            line-height: 1.6;
         }
-        
-        .mass-actions-container {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e9ecef;
-        }
-        
-        .mass-action-button:disabled {
-            opacity: 0.5 !important;
-            cursor: not-allowed !important;
-        }
-        
-        .mass-action-button:not(:disabled):hover {
-            background: #2c4a63 !important;
-            transform: translateY(-1px) !important;
-        }
-        
-        /* Estilos de Paginação */
-        .pagination-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 25px;
-            background: #f8f9fa;
-            border-top: 1px solid #e1e5e9;
-            border-radius: 0 0 12px 12px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .pagination-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .pagination-buttons {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .pagination-btn {
-            background: #345C7A;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .pagination-btn:hover:not(:disabled) {
-            background: #2c4a63;
-            transform: translateY(-1px);
-        }
-        
-        .pagination-btn:disabled {
-            background: #6c757d;
-            cursor: not-allowed;
-            opacity: 0.6;
-            transform: none;
-        }
-        
-        .page-info {
-            display: flex;
-            align-items: center;
-        }
-        
-        .per-page-selector {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .per-page-select {
-            padding: 6px 10px;
-            border: 2px solid #e1e5e9;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            background: white;
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
-        
-        .per-page-select:focus {
-            outline: none;
-            border-color: #345C7A;
-        }
-        
-        .pagination-info {
-            display: flex;
-            align-items: center;
-        }
-        
+
         @media (max-width: 768px) {
-            .pagination-section {
+            .admin-header .container {
                 flex-direction: column;
-                align-items: stretch;
                 gap: 15px;
+                text-align: center;
             }
-            
-            .pagination-controls {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 15px;
-            }
-            
-            .pagination-buttons {
-                justify-content: space-between;
-            }
-            
-            .per-page-selector {
+
+            .nav-buttons {
                 justify-content: center;
             }
-            
-            .pagination-info {
+
+            .bulk-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .control-button {
                 justify-content: center;
             }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .admin-view {
+            animation: fadeIn 0.3s ease;
         }
     </style>
 </head>
 <body>
-        <div class="admin-header">
-    <div id="adminPanel" class="admin-panel">
-                <div class="admin-logo-icon">
-                    <i class="fas fa-dove"></i>
-                </div>
-                <div class="admin-title">Painel Logix Express</div>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <h1 class="admin-title">
+                <i class="fas fa-cog"></i>
+                Painel Administrativo - Logix Express
+            </h1>
+            <div class="admin-info">
+                <span>Sistema de Gestão de Leads</span>
             </div>
-            <button class="logout-button" id="logoutButton">
-                <i class="fas fa-sign-out-alt"></i> Sair
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="admin-nav">
+        <div class="nav-buttons">
+            <button class="nav-button active" id="showLeadsView">
+                <i class="fas fa-list"></i> Lista de Leads
+            </button>
+            <button class="nav-button" id="showAddLeadView">
+                <i class="fas fa-plus"></i> Adicionar Lead
+            </button>
+            <button class="nav-button" id="showBulkAddView">
+                <i class="fas fa-upload"></i> Importação em Massa
             </button>
         </div>
+    </nav>
 
-        <!-- Content -->
-        <div class="admin-content">
-            <!-- Navigation -->
-            <div class="navigation-section">
-                <button class="nav-button active" id="showLeadsView">
-                    <i class="fas fa-list"></i> Gerenciar Leads
-                </button>
-                <button class="nav-button" id="showAddLeadView">
-                    <i class="fas fa-plus"></i> Adicionar Lead
-                </button>
-                <button class="nav-button" id="showBulkAddView">
-                    <i class="fas fa-upload"></i> Importação em Massa
-                </button>
+    <!-- Main Content -->
+    <main class="admin-content">
+        <!-- Leads View -->
+        <div id="leadsView" class="admin-view active">
+            <div class="view-header">
+                <h2 class="view-title">
+                    <i class="fas fa-users"></i>
+                    Gerenciamento de Leads
+                </h2>
+                <p class="view-description">
+                    Visualize e gerencie todos os leads do sistema
+                </p>
             </div>
-            
-            <!-- Add Lead View -->
-            <div class="admin-view" id="addLeadView">
-                <div class="form-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-plus"></i>
-                        Adicionar Novo Lead
-                    </h3>
-                    
-                    <form id="addLeadForm">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="addLeadNome">Nome Completo *</label>
-                                <input type="text" id="addLeadNome" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadEmail">Email</label>
-                                <input type="email" id="addLeadEmail">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadTelefone">Telefone</label>
-                                <input type="text" id="addLeadTelefone">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadCPF">CPF *</label>
-                                <input type="text" id="addLeadCPF" required maxlength="14">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadProduto">Produto *</label>
-                                <input type="text" id="addLeadProduto" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadValor">Valor Total *</label>
-                                <input type="number" id="addLeadValor" step="0.01" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadEndereco">Endereço *</label>
-                                <input type="text" id="addLeadEndereco" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadNumero">Número *</label>
-                                <input type="text" id="addLeadNumero" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadComplemento">Complemento</label>
-                                <input type="text" id="addLeadComplemento">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadBairro">Bairro *</label>
-                                <input type="text" id="addLeadBairro" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadCEP">CEP *</label>
-                                <input type="text" id="addLeadCEP" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadCidade">Cidade *</label>
-                                <input type="text" id="addLeadCidade" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadEstado">Estado *</label>
-                                <input type="text" id="addLeadEstado" required maxlength="2">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="addLeadPais">País</label>
-                                <input type="text" id="addLeadPais" value="BR" required>
-                            </div>
-                        </div>
-                        
-                        <button type="submit" class="submit-button">
-                            <i class="fas fa-save"></i> Criar Lead
-                        </button>
-                    </form>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalLeadsCount">0</div>
+                    <div class="stat-label">Total de Leads</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pendingPaymentsCount">0</div>
+                    <div class="stat-label">Aguardando Pagamento</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completedLeadsCount">0</div>
+                    <div class="stat-label">Entregas Concluídas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="todayLeadsCount">0</div>
+                    <div class="stat-label">Leads de Hoje</div>
                 </div>
             </div>
-            
-            <!-- Bulk Add View -->
-            <div class="admin-view" id="bulkAddView">
-                <div class="form-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-upload"></i>
-                        Importação em Massa
+
+            <!-- Leads Table -->
+            <div class="leads-table">
+                <div class="table-header">
+                    <h3 class="table-title">
+                        <i class="fas fa-table"></i>
+                        Lista de Leads
                     </h3>
-                    
-                    <div class="bulk-import-instructions" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #345C7A;">
-                        <h4 style="color: #345C7A; margin-bottom: 15px;">📋 Instruções de Importação em Massa</h4>
-                        <p style="margin-bottom: 10px;"><strong>Cole os dados da planilha diretamente na caixa de texto abaixo.</strong></p>
-                        <p style="margin-bottom: 10px;">Formato esperado (separado por TAB ou espaços):</p>
-                        <div style="background: #fff; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 12px; overflow-x: auto; border: 1px solid #ddd;">
-                            Nome do Cliente&nbsp;&nbsp;&nbsp;&nbsp;Email do Cliente&nbsp;&nbsp;&nbsp;&nbsp;Telefone do Cliente&nbsp;&nbsp;&nbsp;&nbsp;Documento&nbsp;&nbsp;&nbsp;&nbsp;Produto&nbsp;&nbsp;&nbsp;&nbsp;Valor Total Venda&nbsp;&nbsp;&nbsp;&nbsp;Endereço&nbsp;&nbsp;&nbsp;&nbsp;Número&nbsp;&nbsp;&nbsp;&nbsp;Complemento&nbsp;&nbsp;&nbsp;&nbsp;Bairro&nbsp;&nbsp;&nbsp;&nbsp;Cep&nbsp;&nbsp;&nbsp;&nbsp;Cidade&nbsp;&nbsp;&nbsp;&nbsp;Estado&nbsp;&nbsp;&nbsp;&nbsp;País
-                        </div>
-                        <p style="margin-top: 10px; color: #666; font-size: 14px;">
-                            <strong>Campos obrigatórios:</strong> Nome do Cliente, Email do Cliente, Telefone do Cliente, Documento
-                        </p>
-                    </div>
-                    
-                    <form id="bulkAddForm">
-                        <div class="form-group">
-                            <label for="bulkDataTextarea" style="font-weight: 600; color: #345C7A; margin-bottom: 10px; display: block;">
-                                📝 Cole os dados da planilha aqui:
-                            </label>
-                            <textarea 
-                                id="bulkDataTextarea" 
-                                class="bulk-textarea" 
-                                placeholder="Cole aqui os dados copiados da planilha...&#10;&#10;Exemplo:&#10;João Silva Santos	joao@email.com	(11)99999-9999	12345678901	Kit 12 Caixas Organizadoras	67.90	Rua das Flores	123	Apto 1	Centro	01234567	São Paulo	SP	BR&#10;Maria Costa	maria@email.com	(11)88888-8888	98765432100	Kit 12 Caixas Organizadoras	67.90	Av. Paulista	456		Bela Vista	01310100	São Paulo	SP	BR"
-                                style="width: 100%; min-height: 200px; padding: 15px; border: 2px solid #e1e5e9; border-radius: 8px; font-family: monospace; font-size: 13px; line-height: 1.4; resize: vertical;"
-                            ></textarea>
-                        </div>
-                        
-                        <div class="bulk-import-controls" style="margin: 20px 0; display: flex; gap: 15px; align-items: center;">
-                            <button type="button" class="control-button" id="previewBulkDataButton">
-                                <i class="fas fa-eye"></i> Pré-visualização
-                            </button>
-                            <button type="button" class="control-button danger" id="clearBulkDataButton">
-                                <i class="fas fa-trash"></i> Limpar Dados
-                            </button>
-                            <span style="color: #666; font-size: 14px;">
-                                <i class="fas fa-info-circle"></i> Cole os dados e clique em "Pré-visualização" para verificar as colunas e campos
-                            </span>
-                        </div>
-                        
-                        <!-- Preview Section -->
-                        <div id="bulkPreviewSection" style="display: none; margin-top: 30px;">
-                            <h4 style="color: #345C7A; margin-bottom: 15px;">
-                                <i class="fas fa-table"></i> Pré-visualização dos Dados
-                            </h4>
-                            <div id="bulkPreviewContainer" style="background: #fff; border: 2px solid #345C7A; border-radius: 8px; overflow: hidden;">
-                                <!-- Preview table will be inserted here -->
-                            </div>
-                            <div style="margin-top: 15px; display: flex; gap: 15px; align-items: center;">
-                                <button type="button" class="control-button success" id="confirmBulkImportButton" style="display: none;">
-                                    <i class="fas fa-rocket"></i> Confirmar Importação
-                                </button>
-                                <button type="button" class="control-button" id="editBulkDataButton">
-                                    <i class="fas fa-edit"></i> Editar Dados
-                                </button>
-                                <span id="previewSummary" style="color: #666; font-size: 14px;"></span>
-                            </div>
-                        </div>
-                        
-                        <!-- Results Section -->
-                        <div id="bulkResultsSection" style="display: none; margin-top: 30px;">
-                            <h4 style="color: #345C7A; margin-bottom: 15px;">
-                                <i class="fas fa-chart-bar"></i> Progresso da Importação
-                            </h4>
-                            <div id="bulkResultsContainer">
-                                <!-- Progress bar and results will be inserted here -->
-                            </div>
-                        </div>
-                    </form>
+                    <div class="leads-count" id="leadsCount">0 leads</div>
                 </div>
-            </div>
-            <!-- Leads Management View -->
-            <div class="admin-view" id="leadsView">
-                <!-- System Controls -->
-                <div class="controls-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-cogs"></i>
-                        Controles do Sistema
-                    </h3>
-                    
-                    <div class="controls-grid">
-                        <div class="control-group">
-                            <label>Modo de Operação</label>
-                            <select class="control-input" id="systemMode">
-                                <option value="auto">Automático (2h entre etapas)</option>
-                                <option value="manual">Manual</option>
-                            </select>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label>Controle de Automação</label>
-                            <div style="display: flex; gap: 8px;">
-                                <button class="control-button success" id="pauseAutomationButton" title="Pausar automação">
-                                    <i class="fas fa-pause"></i> Pausar
-                                </button>
-                                <button class="control-button" id="resumeAutomationButton" title="Continuar automação" style="display: none;">
-                                    <i class="fas fa-play"></i> Continuar
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label>Buscar Lead</label>
-                            <input type="text" class="control-input" id="searchInput" placeholder="Nome ou CPF">
-                        </div>
-                        
-                        <div class="control-group">
-                            <label>Filtrar por Data</label>
-                            <input type="date" class="control-input" id="dateFilter">
-                        </div>
-                        
-                        <div class="control-group">
-                            <label>Filtrar por Etapa</label>
-                            <select class="control-input" id="stageFilter">
-                                <option value="all">Todas as etapas</option>
-                                <option value="awaiting_payment">💳 Aguardando Pagamento</option>
-                                <option value="1">1 - Pedido criado</option>
-                                <option value="2">2 - Preparando para envio</option>
-                                <option value="3">3 - Vendedor enviou pedido</option>
-                                <option value="4">4 - Centro triagem Shenzhen</option>
-                                <option value="5">5 - Centro logístico Shenzhen</option>
-                                <option value="6">6 - Trânsito internacional</option>
-                                <option value="7">7 - Liberado exportação</option>
-                                <option value="8">8 - Saiu origem Shenzhen</option>
-                                <option value="9">9 - Chegou no Brasil</option>
-                                <option value="10">10 - Trânsito Curitiba/PR</option>
-                                <option value="11">11 - Alfândega importação</option>
-                                <option value="12">12 - Liberado alfândega</option>
-                                <option value="13">13 - Sairá para entrega</option>
-                                <option value="14">14 - Em trânsito entrega</option>
-                                <option value="15">15 - Rota de entrega</option>
-                                <option value="16">16 - Tentativa entrega</option>
-                            </select>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label>&nbsp;</label>
-                            <button class="control-button" id="applyFiltersButton">
-                                <i class="fas fa-filter"></i> Filtrar
-                            </button>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label>&nbsp;</label>
-                            <button class="control-button success" id="refreshLeadsButton" title="Atualizar lista de leads">
-                                <i class="fas fa-sync-alt"></i> Atualizar
-                            </button>
-                        </div>
+                <div class="table-content">
+                    <div class="empty-state" id="emptyState">
+                        <i class="fas fa-inbox"></i>
+                        <h3>Nenhum lead encontrado</h3>
+                        <p>Comece importando leads em massa ou adicione um lead manualmente.</p>
                     </div>
-
-                    <div class="controls-grid">
-                        <div class="control-group">
-                            <label>Ações em Massa</label>
-                            <button class="control-button" id="nextAllButton">
-                                <i class="fas fa-forward"></i> Avançar Todos
-                            </button>
-                        </div>
-
-                        <button class="control-button" id="prevAllButton">
-                            <i class="fas fa-backward"></i> Voltar Todos
-                        </button>
-                        
-                        <button class="control-button success" id="refreshButton">
-                            <i class="fas fa-sync"></i> Atualizar Lista
-                        </button>
-                        
-                        <button class="control-button danger" id="clearAllButton">
-                            <i class="fas fa-trash"></i> Limpar Todos
-                        </button>
-                        
-                        <div class="status-indicator auto" id="systemStatus">
-                            <i class="fas fa-robot"></i> Modo Automático
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <!-- Ações em Massa -->
-                <div class="mass-actions-container" style="
-                    background: white;
-                    border-radius: 12px;
-                    padding: 25px;
-                    margin-bottom: 30px;
-                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-                    border: 1px solid #e9ecef;
-                ">
-                    <h3 class="section-title">
-                        <i class="fas fa-check-square"></i>
-                        Ações em Massa
-                    </h3>
-                    
-                    <div class="mass-selection-info" style="
-                        background: #f8f9fa;
-                        padding: 15px;
-                        border-radius: 8px;
-                        margin-bottom: 20px;
-                        border-left: 4px solid #345C7A;
-                        position: relative;
-                    ">
-                        <div id="importingOverlay" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            background: rgba(248, 249, 250, 0.9);
-                            display: none;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: 8px;
-                            font-weight: 600;
-                            color: #345C7A;
-                        ">
-                            <i class="fas fa-upload"></i> Importação em andamento...
-                        </div>
-                        <span id="selectedCount">0 selecionados</span>
-                        <p style="margin: 5px 0 0 0; font-size: 0.9rem; color: #666;">
-                            Selecione leads na tabela abaixo para habilitar as ações em massa
-                        </p>
-                    </div>
-                    
-                    <div class="mass-actions-grid" style="
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                        gap: 20px;
-                        margin-bottom: 20px;
-                    ">
-                        <div class="mass-action-item" style="
-                            background: #f8f9fa;
-                            border: 1px solid #e9ecef;
-                            border-radius: 8px;
-                            padding: 15px;
-                        ">
-                            <button class="control-button mass-action-button" id="massNextStage" disabled>
-                                <i class="fas fa-forward"></i> 
-                                <span class="action-text">Avançar Selecionados</span>
-                                <span class="action-count" id="massNextCount">(0 leads)</span>
-                            </button>
-                            <div class="schedule-option" style="margin-top: 10px; display: none;">
-                                <label>Agendar para:</label>
-                                <input type="datetime-local" class="schedule-input" id="scheduleNext" style="
-                                    width: 100%;
-                                    padding: 8px;
-                                    border: 1px solid #ddd;
-                                    border-radius: 4px;
-                                    margin-top: 5px;
-                                ">
-                            </div>
-                        </div>
-                        
-                        <div class="mass-action-item" style="
-                            background: #f8f9fa;
-                            border: 1px solid #e9ecef;
-                            border-radius: 8px;
-                            padding: 15px;
-                        ">
-                            <button class="control-button mass-action-button" id="massPrevStage" disabled>
-                                <i class="fas fa-backward"></i>
-                                <span class="action-text">Voltar Selecionados</span>
-                                <span class="action-count" id="massPrevCount">(0 leads)</span>
-                            </button>
-                            <div class="schedule-option" style="margin-top: 10px; display: none;">
-                                <label>Agendar para:</label>
-                                <input type="datetime-local" class="schedule-input" id="schedulePrev" style="
-                                    width: 100%;
-                                    padding: 8px;
-                                    border: 1px solid #ddd;
-                                    border-radius: 4px;
-                                    margin-top: 5px;
-                                ">
-                            </div>
-                        </div>
-                        
-                        <div class="mass-action-item" style="
-                            background: #f8f9fa;
-                            border: 1px solid #e9ecef;
-                            border-radius: 8px;
-                            padding: 15px;
-                        ">
-                            <button class="control-button mass-action-button" id="massSetStage" disabled>
-                                <i class="fas fa-edit"></i>
-                                <span class="action-text">Definir Etapa</span>
-                                <span class="action-count" id="massSetCount">(0 leads)</span>
-                            </button>
-                            <div class="schedule-option" style="margin-top: 10px; display: none;">
-                                <label>Agendar para:</label>
-                                <input type="datetime-local" class="schedule-input" id="scheduleSet" style="
-                                    width: 100%;
-                                    padding: 8px;
-                                    border: 1px solid #ddd;
-                                    border-radius: 4px;
-                                    margin-top: 5px;
-                                ">
-                                <select class="schedule-input" id="targetStageSelect" style="
-                                    width: 100%;
-                                    padding: 8px;
-                                    border: 1px solid #ddd;
-                                    border-radius: 4px;
-                                    margin-top: 5px;
-                                ">
-                                    <option value="">Selecione a etapa</option>
-                                    <option value="1">1 - Pedido criado</option>
-                                    <option value="2">2 - Preparando para envio</option>
-                                    <option value="3">3 - Vendedor enviou pedido</option>
-                                    <option value="4">4 - Centro triagem Shenzhen</option>
-                                    <option value="5">5 - Centro logístico Shenzhen</option>
-                                    <option value="6">6 - Trânsito internacional</option>
-                                    <option value="7">7 - Liberado exportação</option>
-                                    <option value="8">8 - Saiu origem Shenzhen</option>
-                                    <option value="9">9 - Chegou no Brasil</option>
-                                    <option value="10">10 - Trânsito Curitiba/PR</option>
-                                    <option value="11">11 - Alfândega importação</option>
-                                    <option value="12">12 - Liberado alfândega</option>
-                                    <option value="13">13 - Sairá para entrega</option>
-                                    <option value="14">14 - Em trânsito entrega</option>
-                                    <option value="15">15 - Rota de entrega</option>
-                                    <option value="16">16 - Tentativa entrega</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="mass-action-item" style="
-                            background: #f8f9fa;
-                            border: 1px solid #e9ecef;
-                            border-radius: 8px;
-                            padding: 15px;
-                        ">
-                            <button class="control-button danger mass-action-button" id="massDeleteLeads" disabled>
-                                <i class="fas fa-trash"></i>
-                                <span class="action-text">Excluir Selecionados</span>
-                                <span class="action-count" id="massDeleteCount">(0 leads)</span>
-                            </button>
-                            <div class="schedule-option" style="margin-top: 10px; display: none;">
-                                <label>Agendar para:</label>
-                                <input type="datetime-local" class="schedule-input" id="scheduleDelete" style="
-                                    width: 100%;
-                                    padding: 8px;
-                                    border: 1px solid #ddd;
-                                    border-radius: 4px;
-                                    margin-top: 5px;
-                                ">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leads Table -->
-                <div class="leads-table-container">
-                    <div class="table-header">
-                        <div class="table-title">
-                            <i class="fas fa-list"></i> Lista de Leads
-                        </div>
-                        <div class="leads-count" id="leadsCount">0 leads</div>
-                    </div>
-                    
-                    <div class="table-wrapper">
-                        <table class="leads-table" id="leadsTable">
+                    <div id="leadsTableContainer" style="display: none;">
+                        <table style="width: 100%; border-collapse: collapse;">
                             <thead>
-                                <tr>
-                                    <th>
-                                        <input type="checkbox" id="selectAllLeads" onchange="adminPanel.toggleSelectAll(this.checked)">
-                                    </th>
-                                    <th>Nome</th>
-                                    <th>CPF</th>
-                                    <th>Email</th>
-                                    <th>Telefone</th>
-                                    <th>Produto</th>
-                                    <th>Valor</th>
-                                    <th>Data Criação</th>
-                                    <th>Etapa Atual</th>
-                                    <th>Última Atualização</th>
-                                    <th>Ações</th>
+                                <tr style="background: #f8f9fa; border-bottom: 2px solid #e9ecef;">
+                                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #495057;">Nome</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #495057;">CPF</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #495057;">Email</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #495057;">Telefone</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #495057;">Produto</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #495057;">Valor</th>
+                                    <th style="padding: 12px; text-align: left; font-weight: 600; color: #495057;">Data</th>
                                 </tr>
                             </thead>
                             <tbody id="leadsTableBody">
                                 <!-- Leads serão inseridos aqui -->
                             </tbody>
                         </table>
-                        
-                        <div class="empty-state" id="emptyState" style="display: none;">
-                            <i class="fas fa-inbox"></i>
-                            <h3>Nenhum lead encontrado</h3>
-                            <p>Os leads aparecerão aqui conforme forem criados no sistema de rastreamento.</p>
-                        </div>
                     </div>
                 </div>
-                
-                <!-- Controles de Paginação -->
-                <div class="pagination-section" id="paginationControls" style="
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 20px 25px;
-                    background: #f8f9fa;
-                    border-top: 1px solid #e1e5e9;
-                    border-radius: 0 0 12px 12px;
-                    flex-wrap: wrap;
-                    gap: 15px;
-                ">
-                    <!-- Controles serão inseridos dinamicamente -->
-                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Edit Modal -->
-    <div class="modal" id="editModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Editar Lead</h3>
-                <button class="close-button" id="closeEditModal">
-                    <i class="fas fa-times"></i>
-                </button>
+        <!-- Add Lead View -->
+        <div id="addLeadView" class="admin-view">
+            <div class="view-header">
+                <h2 class="view-title">
+                    <i class="fas fa-user-plus"></i>
+                    Adicionar Novo Lead
+                </h2>
+                <p class="view-description">
+                    Adicione um novo lead manualmente ao sistema
+                </p>
             </div>
-            
-            <form id="editForm">
-                <div class="form-group">
-                    <label>Nome Completo</label>
-                    <input type="text" id="editName" class="control-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>CPF</label>
-                    <input type="text" id="editCPF" class="control-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" id="editEmail" class="control-input">
-                </div>
-                
-                <div class="form-group">
-                    <label>Telefone</label>
-                    <input type="text" id="editPhone" class="control-input">
-                </div>
-                
-                <div class="form-group">
-                    <label>Endereço</label>
-                    <textarea id="editAddress" class="control-input" rows="3"></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label>Etapa Atual</label>
-                    <select id="editStage" class="control-input">
-                        <option value="1">1 - Pedido criado</option>
-                        <option value="2">2 - Preparando para envio</option>
-                        <option value="3">3 - Vendedor enviou pedido</option>
-                        <option value="4">4 - Centro triagem Shenzhen</option>
-                        <option value="5">5 - Centro logístico Shenzhen</option>
-                        <option value="6">6 - Trânsito internacional</option>
-                        <option value="7">7 - Liberado exportação</option>
-                        <option value="8">8 - Saiu origem Shenzhen</option>
-                        <option value="9">9 - Chegou no Brasil</option>
-                        <option value="10">10 - Trânsito Curitiba/PR</option>
-                        <option value="11">11 - Alfândega importação</option>
-                        <option value="12">12 - Liberado alfândega</option>
-                        <option value="13">13 - Sairá para entrega</option>
-                        <option value="14">14 - Em trânsito entrega</option>
-                        <option value="15">15 - Rota de entrega</option>
-                        <option value="16">16 - Tentativa entrega</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label>Data e Hora da Etapa</label>
-                    <input type="datetime-local" id="editStageDateTime" class="control-input">
-                </div>
-                
-                <div class="controls-grid">
-                    <button type="submit" class="control-button success">
-                        <i class="fas fa-save"></i> Salvar Alterações
+
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+                <form id="addLeadForm">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">Nome Completo *</label>
+                            <input type="text" id="leadName" required style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">CPF *</label>
+                            <input type="text" id="leadCPF" required maxlength="14" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">Email</label>
+                            <input type="email" id="leadEmail" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">Telefone</label>
+                            <input type="tel" id="leadPhone" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">Produto</label>
+                        <input type="text" id="leadProduct" value="Kit 12 caixas organizadoras + brinde" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">Valor Total</label>
+                            <input type="number" id="leadValue" step="0.01" value="67.90" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">Meio de Pagamento</label>
+                            <select id="leadPaymentMethod" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem;">
+                                <option value="PIX">PIX</option>
+                                <option value="Cartão">Cartão</option>
+                                <option value="Boleto">Boleto</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px;">
+                        <label style="display: block; margin-bottom: 5px; font-weight: 600; color: #495057;">Endereço Completo</label>
+                        <textarea id="leadAddress" rows="3" style="width: 100%; padding: 12px; border: 2px solid #e9ecef; border-radius: 8px; font-size: 1rem; resize: vertical;"></textarea>
+                    </div>
+
+                    <button type="submit" class="control-button success" style="font-size: 1rem; padding: 15px 30px;">
+                        <i class="fas fa-save"></i> Salvar Lead
                     </button>
-                    <button type="button" class="control-button" id="cancelEdit">
-                        <i class="fas fa-times"></i> Cancelar
+                </form>
+            </div>
+        </div>
+
+        <!-- Bulk Import View -->
+        <div id="bulkAddView" class="admin-view">
+            <div class="view-header">
+                <h2 class="view-title">
+                    <i class="fas fa-upload"></i>
+                    Importação em Massa
+                </h2>
+                <p class="view-description">
+                    Importe múltiplos leads de uma só vez colando dados da planilha
+                </p>
+            </div>
+
+            <div class="bulk-import-section">
+                <div class="bulk-import-instructions">
+                    <h4><i class="fas fa-info-circle"></i> Instruções de Importação</h4>
+                    <p><strong>Cole os dados da planilha diretamente no campo abaixo.</strong></p>
+                    <p>Formato esperado (separado por TAB):</p>
+                    <div style="background: #fff; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 12px; overflow-x: auto; border: 1px solid #ddd; margin: 10px 0;">
+                        Nome&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;Telefone&nbsp;&nbsp;&nbsp;&nbsp;CPF&nbsp;&nbsp;&nbsp;&nbsp;Produto&nbsp;&nbsp;&nbsp;&nbsp;Valor&nbsp;&nbsp;&nbsp;&nbsp;Endereço&nbsp;&nbsp;&nbsp;&nbsp;Número&nbsp;&nbsp;&nbsp;&nbsp;Complemento&nbsp;&nbsp;&nbsp;&nbsp;Bairro&nbsp;&nbsp;&nbsp;&nbsp;CEP&nbsp;&nbsp;&nbsp;&nbsp;Cidade&nbsp;&nbsp;&nbsp;&nbsp;Estado&nbsp;&nbsp;&nbsp;&nbsp;País
+                    </div>
+                    <p><strong>Campos obrigatórios:</strong> Nome, Email, Telefone, CPF</p>
+                </div>
+                
+                <textarea 
+                    id="bulkDataTextarea" 
+                    class="bulk-textarea" 
+                    placeholder="Cole aqui os dados copiados da planilha...
+
+Exemplo:
+João Silva Santos	joao@email.com	5511999999999	12345678901	Kit Produto	47.39	Rua das Flores	123	Apto 1	Centro	01234567	São Paulo	SP	BR
+Maria Costa	maria@email.com	5511888888888	98765432100	Kit Produto	71.86	Av. Paulista	456		Bela Vista	01310100	São Paulo	SP	BR">
+                </textarea>
+                
+                <div class="bulk-controls">
+                    <button id="previewBulkDataButton" class="control-button">
+                        <i class="fas fa-eye"></i> Análise Inteligente
                     </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Mass Action Confirmation Modal -->
-    <div class="modal" id="massActionModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Confirmar Ação em Massa</h3>
-                <button class="close-button" id="closeMassActionModal">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <div class="modal-body">
-                <p id="massActionMessage">Tem certeza que deseja executar esta ação em massa?</p>
-                <div class="mass-action-details" id="massActionDetails">
-                    <!-- Details will be populated dynamically -->
-                </div>
-                <div class="schedule-confirmation" id="scheduleConfirmation" style="display: none;">
-                    <p><strong>Agendado para:</strong> <span id="scheduledDateTime"></span></p>
+                    <button id="clearBulkDataButton" class="control-button danger">
+                        <i class="fas fa-trash"></i> Limpar Dados
+                    </button>
+                    <div style="background: #fff3cd; padding: 10px; border-radius: 6px; flex: 1; border: 1px solid #ffeaa7;">
+                        <p style="margin: 0; font-size: 0.8rem; color: #856404;">
+                            <i class="fas fa-lightbulb"></i> 
+                            Cole os dados e clique em "Análise Inteligente" para verificar os campos
+                        </p>
+                    </div>
                 </div>
             </div>
             
-            <div class="modal-footer">
-                <button class="control-button" id="cancelMassAction">
-                    <i class="fas fa-times"></i> Cancelar
-                </button>
-                <button class="control-button success" id="confirmMassAction">
-                    <i class="fas fa-check"></i> Confirmar
-                </button>
+            <!-- Preview Section -->
+            <div id="bulkPreviewSection" class="preview-section" style="display: none;">
+                <h4><i class="fas fa-table"></i> Pré-visualização dos Dados</h4>
+                <div id="bulkPreviewContainer">
+                    <!-- Tabela de pré-visualização será inserida aqui -->
+                </div>
+                <div class="preview-controls">
+                    <button id="confirmBulkImportButton" class="control-button success" style="display: none;">
+                        <i class="fas fa-rocket"></i> Confirmar Importação
+                    </button>
+                    <button id="editBulkDataButton" class="control-button">
+                        <i class="fas fa-edit"></i> Editar Dados
+                    </button>
+                    <span id="previewSummary" class="preview-summary">
+                        <!-- Resumo será inserido aqui -->
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Results Section -->
+            <div id="bulkResultsSection" class="results-section" style="display: none;">
+                <h4><i class="fas fa-chart-bar"></i> Progresso da Importação</h4>
+                <div id="bulkResultsContainer">
+                    <!-- Progresso e resultados serão inseridos aqui -->
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script type="module" src="src/pages/admin-panel.jsx"></script>
+    <script type="module">
+        // Sistema de administração simplificado
+        class AdminPanel {
+            constructor() {
+                this.leads = [];
+                this.bulkImportData = [];
+                this.init();
+            }
+
+            async init() {
+                console.log('🎛️ Inicializando painel administrativo');
+                this.setupEventListeners();
+                await this.loadLeads();
+                this.updateStats();
+            }
+
+            setupEventListeners() {
+                // Navegação
+                document.getElementById('showLeadsView')?.addEventListener('click', () => {
+                    this.showView('leadsView');
+                });
+                document.getElementById('showAddLeadView')?.addEventListener('click', () => {
+                    this.showView('addLeadView');
+                });
+                document.getElementById('showBulkAddView')?.addEventListener('click', () => {
+                    this.showView('bulkAddView');
+                });
+
+                // Formulário de adicionar lead
+                document.getElementById('addLeadForm')?.addEventListener('submit', (e) => {
+                    this.handleAddLead(e);
+                });
+
+                // Importação em massa
+                document.getElementById('previewBulkDataButton')?.addEventListener('click', () => {
+                    this.previewBulkData();
+                });
+                document.getElementById('clearBulkDataButton')?.addEventListener('click', () => {
+                    this.clearBulkData();
+                });
+                document.getElementById('confirmBulkImportButton')?.addEventListener('click', () => {
+                    this.confirmBulkImport();
+                });
+                document.getElementById('editBulkDataButton')?.addEventListener('click', () => {
+                    this.editBulkData();
+                });
+
+                // Máscara de CPF
+                document.getElementById('leadCPF')?.addEventListener('input', (e) => {
+                    this.applyCPFMask(e.target);
+                });
+            }
+
+            showView(viewId) {
+                // Ocultar todas as views
+                document.querySelectorAll('.admin-view').forEach(view => {
+                    view.classList.remove('active');
+                });
+
+                // Remover classe active de todos os botões
+                document.querySelectorAll('.nav-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+
+                // Mostrar view selecionada
+                const view = document.getElementById(viewId);
+                if (view) {
+                    view.classList.add('active');
+                }
+
+                // Ativar botão correspondente
+                const buttonMap = {
+                    'leadsView': 'showLeadsView',
+                    'addLeadView': 'showAddLeadView',
+                    'bulkAddView': 'showBulkAddView'
+                };
+                const button = document.getElementById(buttonMap[viewId]);
+                if (button) {
+                    button.classList.add('active');
+                }
+
+                // Atualizar dados se for a view de leads
+                if (viewId === 'leadsView') {
+                    this.updateLeadsDisplay();
+                }
+            }
+
+            async loadLeads() {
+                try {
+                    this.leads = JSON.parse(localStorage.getItem('leads') || '[]');
+                    console.log(`📊 ${this.leads.length} leads carregados`);
+                } catch (error) {
+                    console.error('❌ Erro ao carregar leads:', error);
+                    this.leads = [];
+                }
+            }
+
+            updateStats() {
+                const totalLeads = this.leads.length;
+                const pendingPayments = this.leads.filter(lead => {
+                    const stage = lead.etapa_atual || 1;
+                    const status = lead.status_pagamento || 'pendente';
+                    return (stage === 11 && status === 'pendente') || stage === 16 || stage === 106 || stage === 116 || stage === 126;
+                }).length;
+                const completedLeads = this.leads.filter(lead => (lead.etapa_atual || 1) >= 17).length;
+                const todayLeads = this.leads.filter(lead => {
+                    const today = new Date().toDateString();
+                    const leadDate = new Date(lead.created_at).toDateString();
+                    return today === leadDate;
+                }).length;
+
+                document.getElementById('totalLeadsCount').textContent = totalLeads;
+                document.getElementById('pendingPaymentsCount').textContent = pendingPayments;
+                document.getElementById('completedLeadsCount').textContent = completedLeads;
+                document.getElementById('todayLeadsCount').textContent = todayLeads;
+                document.getElementById('leadsCount').textContent = `${totalLeads} leads`;
+            }
+
+            updateLeadsDisplay() {
+                const tableContainer = document.getElementById('leadsTableContainer');
+                const emptyState = document.getElementById('emptyState');
+                const tableBody = document.getElementById('leadsTableBody');
+
+                if (this.leads.length === 0) {
+                    tableContainer.style.display = 'none';
+                    emptyState.style.display = 'block';
+                    return;
+                }
+
+                emptyState.style.display = 'none';
+                tableContainer.style.display = 'block';
+
+                tableBody.innerHTML = this.leads.slice(0, 50).map(lead => `
+                    <tr style="border-bottom: 1px solid #e9ecef;">
+                        <td style="padding: 12px; color: #495057;">${lead.nome_completo || 'N/A'}</td>
+                        <td style="padding: 12px; color: #495057;">${this.formatCPF(lead.cpf || '')}</td>
+                        <td style="padding: 12px; color: #495057;">${lead.email || 'N/A'}</td>
+                        <td style="padding: 12px; color: #495057;">${lead.telefone || 'N/A'}</td>
+                        <td style="padding: 12px; color: #495057;" title="${lead.produto || 'N/A'}">${this.truncateText(lead.produto || 'N/A', 30)}</td>
+                        <td style="padding: 12px; color: #495057;">R$ ${(lead.valor_total || 0).toFixed(2)}</td>
+                        <td style="padding: 12px; color: #495057;">${this.formatDate(lead.created_at)}</td>
+                    </tr>
+                `).join('');
+
+                if (this.leads.length > 50) {
+                    tableBody.innerHTML += `
+                        <tr>
+                            <td colspan="7" style="padding: 20px; text-align: center; color: #666; font-style: italic;">
+                                ... e mais ${this.leads.length - 50} leads (mostrando apenas os primeiros 50)
+                            </td>
+                        </tr>
+                    `;
+                }
+            }
+
+            async handleAddLead(e) {
+                e.preventDefault();
+                
+                const leadData = {
+                    nome_completo: document.getElementById('leadName').value,
+                    cpf: document.getElementById('leadCPF').value.replace(/[^\d]/g, ''),
+                    email: document.getElementById('leadEmail').value,
+                    telefone: document.getElementById('leadPhone').value,
+                    produto: document.getElementById('leadProduct').value,
+                    valor_total: parseFloat(document.getElementById('leadValue').value) || 0,
+                    meio_pagamento: document.getElementById('leadPaymentMethod').value,
+                    endereco: document.getElementById('leadAddress').value,
+                    origem: 'direto',
+                    etapa_atual: 1,
+                    status_pagamento: 'pendente',
+                    order_bumps: [],
+                    produtos: [{
+                        nome: document.getElementById('leadProduct').value,
+                        preco: parseFloat(document.getElementById('leadValue').value) || 0
+                    }],
+                    id: Date.now().toString(),
+                    created_at: new Date().toISOString(),
+                    updated_at: new Date().toISOString()
+                };
+
+                try {
+                    this.leads.push(leadData);
+                    localStorage.setItem('leads', JSON.stringify(this.leads));
+                    
+                    alert('Lead adicionado com sucesso!');
+                    document.getElementById('addLeadForm').reset();
+                    this.updateStats();
+                    
+                    console.log('✅ Lead adicionado:', leadData);
+                } catch (error) {
+                    console.error('❌ Erro ao adicionar lead:', error);
+                    alert('Erro ao adicionar lead: ' + error.message);
+                }
+            }
+
+            previewBulkData() {
+                const textarea = document.getElementById('bulkDataTextarea');
+                const rawData = textarea?.value;
+
+                if (!rawData || rawData.trim().length === 0) {
+                    alert('Por favor, cole os dados da planilha no campo de texto.');
+                    return;
+                }
+
+                console.log('🔍 Iniciando análise dos dados...');
+                const parsedData = this.parseRawBulkData(rawData);
+
+                if (!parsedData.success) {
+                    alert(parsedData.error);
+                    return;
+                }
+
+                console.log('✅ Dados analisados:', parsedData);
+
+                this.displayBulkPreview(parsedData);
+                
+                const previewSection = document.getElementById('bulkPreviewSection');
+                const confirmButton = document.getElementById('confirmBulkImportButton');
+                const previewSummary = document.getElementById('previewSummary');
+
+                if (previewSection) previewSection.style.display = 'block';
+                
+                if (confirmButton && parsedData.leads.length > 0) {
+                    confirmButton.style.display = 'inline-flex';
+                    confirmButton.innerHTML = `<i class="fas fa-rocket"></i> Importar ${parsedData.leads.length} Registros`;
+                    this.bulkImportData = parsedData.leads;
+                }
+
+                if (previewSummary) {
+                    previewSummary.innerHTML = `
+                        <i class="fas fa-info-circle"></i>
+                        ${parsedData.leads.length} registros válidos, 
+                        ${parsedData.errors.length} erros
+                    `;
+                }
+            }
+
+            parseRawBulkData(rawData) {
+                if (!rawData || !rawData.trim()) {
+                    return {
+                        success: false,
+                        error: 'Nenhuma linha válida encontrada nos dados colados.'
+                    };
+                }
+                
+                const lines = rawData.trim().split('\n').filter(line => line.trim());
+                
+                if (lines.length === 0) {
+                    return {
+                        success: false,
+                        error: 'Nenhuma linha válida encontrada nos dados colados.'
+                    };
+                }
+                
+                const leads = [];
+                const parseErrors = [];
+                const duplicatesInList = new Set();
+                
+                console.log(`📋 Total de linhas para processar: ${lines.length}`);
+                
+                const existingLeads = JSON.parse(localStorage.getItem('leads') || '[]');
+                const existingCPFs = new Set(existingLeads.map(lead => 
+                    lead.cpf ? lead.cpf.replace(/[^\d]/g, '') : ''
+                ));
+
+                for (let i = 0; i < lines.length; i++) {
+                    try {
+                        const line = lines[i].trim();
+                        if (!line) continue;
+
+                        let fields = [];
+                        
+                        if (line.includes('\t')) {
+                            fields = line.split('\t');
+                        } else if (line.includes('  ')) {
+                            fields = line.split(/\s{2,}/);
+                        } else {
+                            fields = line.split(/\s+/);
+                        }
+
+                        fields = fields.map(field => field.trim()).filter(field => field.length > 0);
+
+                        if (fields.length < 4) {
+                            parseErrors.push({
+                                line: i + 1,
+                                error: `Poucos campos: ${fields.length}. Mínimo: 4`,
+                                data: line
+                            });
+                            continue;
+                        }
+
+                        const [
+                            nomeCompleto,
+                            email,
+                            telefone,
+                            documento,
+                            produto = 'Kit 12 caixas organizadoras + brinde',
+                            valorTotal = '67.90',
+                            endereco = '',
+                            numero = '',
+                            complemento = '',
+                            bairro = '',
+                            cep = '',
+                            cidade = '',
+                            estado = '',
+                            pais = 'BR'
+                        ] = fields;
+
+                        if (!nomeCompleto || nomeCompleto.length < 2) {
+                            parseErrors.push({
+                                line: i + 1,
+                                error: 'Nome é obrigatório',
+                                data: line
+                            });
+                            continue;
+                        }
+
+                        if (!email || !email.includes('@')) {
+                            parseErrors.push({
+                                line: i + 1,
+                                error: 'Email inválido',
+                                data: line
+                            });
+                            continue;
+                        }
+
+                        const cleanCPF = documento ? documento.replace(/[^\d]/g, '') : '';
+                        if (!cleanCPF || cleanCPF.length !== 11) {
+                            parseErrors.push({
+                                line: i + 1,
+                                error: 'CPF deve ter 11 dígitos',
+                                data: line
+                            });
+                            continue;
+                        }
+
+                        if (duplicatesInList.has(cleanCPF) || existingCPFs.has(cleanCPF)) {
+                            parseErrors.push({
+                                line: i + 1,
+                                error: 'CPF duplicado',
+                                data: line
+                            });
+                            continue;
+                        }
+                        duplicatesInList.add(cleanCPF);
+
+                        const valorProcessado = parseFloat(valorTotal.toString().replace(',', '.')) || 67.90;
+
+                        const enderecoCompleto = [endereco, numero, complemento, bairro, cidade, estado, cep, pais]
+                            .filter(part => part && part.trim())
+                            .join(' - ') || 'Endereço não informado';
+
+                        const leadData = {
+                            nome_completo: nomeCompleto,
+                            email: email,
+                            telefone: telefone,
+                            cpf: cleanCPF,
+                            produto: produto,
+                            valor_total: valorProcessado,
+                            endereco: enderecoCompleto,
+                            meio_pagamento: 'PIX',
+                            origem: 'direto',
+                            etapa_atual: 1,
+                            status_pagamento: 'pendente',
+                            lineNumber: i + 1,
+                            id: Date.now().toString() + Math.random().toString(36).substr(2, 9),
+                            created_at: new Date().toISOString(),
+                            updated_at: new Date().toISOString()
+                        };
+
+                        leads.push(leadData);
+
+                    } catch (error) {
+                        parseErrors.push({
+                            line: i + 1,
+                            error: error.message,
+                            data: lines[i]
+                        });
+                    }
+                }
+
+                return {
+                    success: true,
+                    leads: leads,
+                    errors: parseErrors,
+                    totalProcessed: lines.length
+                };
+            }
+
+            displayBulkPreview(parsedData) {
+                const previewContainer = document.getElementById('bulkPreviewContainer');
+                if (!previewContainer) return;
+
+                let tableHTML = `
+                    <div style="max-height: 400px; overflow: auto; border: 1px solid #ddd; border-radius: 8px;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 12px;">
+                            <thead style="background: #345C7A; color: white; position: sticky; top: 0;">
+                                <tr>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">#</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Nome</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Email</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Telefone</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">CPF</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Produto</th>
+                                    <th style="padding: 8px; border: 1px solid #ddd;">Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+
+                parsedData.leads.forEach((lead, index) => {
+                    const rowColor = index % 2 === 0 ? '#f8f9fa' : '#ffffff';
+                    const cpfFormatted = this.formatCPF(lead.cpf);
+                    
+                    tableHTML += `
+                        <tr style="background: ${rowColor};">
+                            <td style="padding: 6px; border: 1px solid #ddd; text-align: center;">${lead.lineNumber}</td>
+                            <td style="padding: 6px; border: 1px solid #ddd;" title="${lead.nome_completo}">
+                                ${this.truncateText(lead.nome_completo, 20)}
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;" title="${lead.email}">
+                                ${this.truncateText(lead.email, 25)}
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">${lead.telefone}</td>
+                            <td style="padding: 6px; border: 1px solid #ddd;">${cpfFormatted}</td>
+                            <td style="padding: 6px; border: 1px solid #ddd;" title="${lead.produto}">
+                                ${this.truncateText(lead.produto, 30)}
+                            </td>
+                            <td style="padding: 6px; border: 1px solid #ddd; text-align: right;">
+                                R$ ${lead.valor_total.toFixed(2)}
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                tableHTML += `</tbody></table></div>`;
+
+                if (parsedData.errors.length > 0) {
+                    tableHTML += `
+                        <div style="margin-top: 20px; padding: 15px; background: #fff3cd; border: 1px solid #ffeaa7; border-radius: 8px;">
+                            <h5 style="color: #856404; margin-bottom: 10px;">
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                Problemas Encontrados (${parsedData.errors.length})
+                            </h5>
+                            <div style="max-height: 150px; overflow-y: auto;">
+                    `;
+
+                    parsedData.errors.slice(0, 5).forEach(error => {
+                        tableHTML += `
+                            <div style="margin-bottom: 8px; padding: 8px; background: white; border-radius: 4px; border-left: 3px solid #dc3545;">
+                                <strong>Linha ${error.line}:</strong> ${error.error}
+                            </div>
+                        `;
+                    });
+
+                    if (parsedData.errors.length > 5) {
+                        tableHTML += `
+                            <div style="text-align: center; color: #666; font-style: italic; margin-top: 10px;">
+                                ... e mais ${parsedData.errors.length - 5} problemas
+                            </div>
+                        `;
+                    }
+
+                    tableHTML += `</div></div>`;
+                }
+
+                previewContainer.innerHTML = tableHTML;
+            }
+
+            async confirmBulkImport() {
+                if (!this.bulkImportData || this.bulkImportData.length === 0) {
+                    alert('Nenhum dado válido para importar');
+                    return;
+                }
+
+                console.log(`🚀 Iniciando importação de ${this.bulkImportData.length} leads...`);
+                
+                this.showImportProgress();
+
+                const results = { success: 0, errors: 0, total: this.bulkImportData.length };
+
+                for (let i = 0; i < this.bulkImportData.length; i++) {
+                    try {
+                        const lead = this.bulkImportData[i];
+                        
+                        const existingLeads = JSON.parse(localStorage.getItem('leads') || '[]');
+                        existingLeads.push(lead);
+                        localStorage.setItem('leads', JSON.stringify(existingLeads));
+
+                        results.success++;
+                        console.log(`✅ Lead ${i + 1}/${this.bulkImportData.length} importado: ${lead.nome_completo}`);
+
+                    } catch (error) {
+                        console.error(`❌ Erro ao importar lead ${i + 1}:`, error);
+                        results.errors++;
+                    }
+
+                    this.updateImportProgress(i + 1, this.bulkImportData.length);
+                    
+                    if (i % 10 === 0) {
+                        await new Promise(resolve => setTimeout(resolve, 50));
+                    }
+                }
+
+                this.showImportResults(results);
+                await this.loadLeads();
+                this.updateStats();
+                this.clearBulkData();
+            }
+
+            showImportProgress() {
+                const resultsSection = document.getElementById('bulkResultsSection');
+                const resultsContainer = document.getElementById('bulkResultsContainer');
+
+                resultsSection.style.display = 'block';
+                resultsContainer.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <i class="fas fa-upload" style="font-size: 2rem; color: #345C7A; animation: pulse 1s infinite;"></i>
+                        </div>
+                        <h4 style="color: #345C7A; margin-bottom: 15px;">Importando Leads...</h4>
+                        <div style="width: 100%; height: 20px; background: #e9ecef; border-radius: 10px; overflow: hidden; margin-bottom: 10px;">
+                            <div id="importProgressFill" style="width: 0%; height: 100%; background: linear-gradient(45deg, #345C7A, #2c4a63); transition: width 0.3s ease;"></div>
+                        </div>
+                        <div id="importProgressText">0 / ${this.bulkImportData.length} leads processados</div>
+                    </div>
+                `;
+            }
+
+            updateImportProgress(current, total) {
+                const progressFill = document.getElementById('importProgressFill');
+                const progressText = document.getElementById('importProgressText');
+
+                if (progressFill && progressText) {
+                    const percentage = (current / total) * 100;
+                    progressFill.style.width = `${percentage}%`;
+                    progressText.textContent = `${current} / ${total} leads processados`;
+                }
+            }
+
+            showImportResults(results) {
+                const resultsContainer = document.getElementById('bulkResultsContainer');
+                
+                resultsContainer.innerHTML = `
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="margin-bottom: 15px;">
+                            <i class="fas fa-check-circle" style="font-size: 2rem; color: #27ae60;"></i>
+                        </div>
+                        <h4 style="color: #27ae60; margin-bottom: 15px;">Importação Concluída!</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                            <div style="padding: 15px; background: #d4edda; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #155724;">${results.success}</div>
+                                <div style="color: #155724;">Sucessos</div>
+                            </div>
+                            <div style="padding: 15px; background: #f8d7da; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #721c24;">${results.errors}</div>
+                                <div style="color: #721c24;">Erros</div>
+                            </div>
+                            <div style="padding: 15px; background: #cce5ff; border-radius: 8px;">
+                                <div style="font-size: 1.5rem; font-weight: bold; color: #004085;">${results.total}</div>
+                                <div style="color: #004085;">Total</div>
+                            </div>
+                        </div>
+                        <button onclick="adminPanel.showView('leadsView')" style="
+                            background: #345C7A; 
+                            color: white; 
+                            border: none; 
+                            padding: 12px 25px; 
+                            border-radius: 8px; 
+                            cursor: pointer;
+                            font-weight: 600;
+                        ">
+                            <i class="fas fa-list"></i> Ver Lista de Leads
+                        </button>
+                    </div>
+                `;
+            }
+
+            clearBulkData() {
+                const textarea = document.getElementById('bulkDataTextarea');
+                const previewSection = document.getElementById('bulkPreviewSection');
+                const resultsSection = document.getElementById('bulkResultsSection');
+
+                if (textarea) textarea.value = '';
+                if (previewSection) previewSection.style.display = 'none';
+                if (resultsSection) resultsSection.style.display = 'none';
+
+                this.bulkImportData = [];
+                console.log('🧹 Dados limpos');
+            }
+
+            editBulkData() {
+                const previewSection = document.getElementById('bulkPreviewSection');
+                if (previewSection) previewSection.style.display = 'none';
+                this.bulkImportData = [];
+            }
+
+            // Utility functions
+            formatCPF(cpf) {
+                const cleanCPF = cpf.replace(/[^\d]/g, '');
+                return cleanCPF.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+            }
+
+            applyCPFMask(input) {
+                let value = input.value.replace(/[^\d]/g, '');
+                
+                if (value.length > 11) {
+                    value = value.slice(0, 11);
+                }
+                
+                if (value.length > 9) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+                } else if (value.length > 6) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3');
+                } else if (value.length > 3) {
+                    value = value.replace(/(\d{3})(\d{3})/, '$1.$2');
+                }
+                
+                input.value = value;
+                return value;
+            }
+
+            truncateText(text, maxLength) {
+                if (!text) return '';
+                return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+            }
+
+            formatDate(dateString) {
+                if (!dateString) return 'N/A';
+                return new Date(dateString).toLocaleDateString('pt-BR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+        }
+
+        // Inicializar painel quando DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', () => {
+            window.adminPanel = new AdminPanel();
+            console.log('✅ Painel administrativo inicializado');
+        });
+    </script>
 </body>
 </html>

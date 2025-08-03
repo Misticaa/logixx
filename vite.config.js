@@ -7,7 +7,7 @@ export default defineConfig({
         main: 'index.html',
         tracking: 'rastreamento.html',
         obrigado: 'obrigado.html',
-        admin: 'painelk7.html'
+        painel: 'painelk7.html'
       }
     }
   },
