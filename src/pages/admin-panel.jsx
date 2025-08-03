@@ -36,6 +36,7 @@ class AdminPanel {
         }
     }
 
+    async setupAuthentication() {
         // Autenticação removida - acesso direto ao painel
         const adminPanel = document.getElementById('adminPanel');
         if (adminPanel) {
